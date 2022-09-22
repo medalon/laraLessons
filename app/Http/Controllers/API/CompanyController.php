@@ -5,9 +5,13 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\Company;
 use Illuminate\Http\Request;
+use App\Http\Requests\CompanyRequest;
 
 class CompanyController extends Controller
 {
+    
+
+    
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +19,12 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+       
+    }
+    
+    public function create()
+    {
+        
     }
 
     /**
@@ -24,9 +33,9 @@ class CompanyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CompanyRequest $request)
     {
-        //
+        
     }
 
     /**
@@ -37,7 +46,12 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        //
+        
+    }
+
+    public function edit(Company $company)
+    {
+        
     }
 
     /**
@@ -47,9 +61,10 @@ class CompanyController extends Controller
      * @param  \App\Models\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Company $company)
+    public function update(CompanyRequest $request, Company $company)
     {
-        //
+        
+
     }
 
     /**
@@ -60,6 +75,6 @@ class CompanyController extends Controller
      */
     public function destroy(Company $company)
     {
-        //
+        
     }
 }
