@@ -51,7 +51,17 @@ Route::get('/', function () {
 
 // Route::get('/contacts/edit/{contact}', [ContactController::class, 'edit'])->name('contacts.edit');
 
+
 // Route::resource('/contacts', ContactController::class);
+// Route::resource('/contacts', ContactController::class)->parameters([
+//     'contacts' => 'kontakt',
+// ]);
+// Route::resource('/contacts', ContactController::class)->names([
+//     'index' => 'contacts.all',
+//     'show'  => 'contacts.view' 
+// ]);
+// Route::resource('/companies.contacts', ContactController::class);
+
 Route::resources([
     '/contacts' => ContactController::class,
     '/companies'  => CompanyController::class,
