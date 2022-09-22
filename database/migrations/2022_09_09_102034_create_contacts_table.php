@@ -20,8 +20,10 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('email');
             $table->string('address');
+            // $table->unsignedBigInteger('user_id');
             // $table->unsignedBigInteger('company_id');            
             $table->foreignId('company_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
 
         });

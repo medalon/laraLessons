@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 
 use DB;
 use Faker\Factory as Faker;
+use App\Models\Contact;
 
 class ContactsTableSeeder extends Seeder
 {
@@ -17,25 +18,27 @@ class ContactsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('contacts')->truncate();
+        ////////Contact::factory()->count(50)->create();
 
-        $contacts = [];
-        $faker = Faker::create();
+        // DB::table('contacts')->truncate();
 
-        foreach (range(1,10) as $index)
-        {
-            $contacts[] = [
-                'first_name' => $faker->firstName,
-                'last_name' => $faker->lastName,
-                'phone' => $faker->tollFreePhoneNumber,
-                'email' => $faker->email,
-                'address' => $faker->address,
-                'company_id' => $index,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ];
-        }
+        // $contacts = [];
+        // $faker = Faker::create();
 
-        DB::table('contacts')->insert($contacts);
+        // foreach (range(1,10) as $index)
+        // {
+        //     $contacts[] = [
+        //         'first_name' => $faker->firstName,
+        //         'last_name' => $faker->lastName,
+        //         'phone' => $faker->tollFreePhoneNumber,
+        //         'email' => $faker->email,
+        //         'address' => $faker->address,
+        //         'company_id' => $index,
+        //         'created_at' => now(),
+        //         'updated_at' => now(),
+        //     ];
+        // }
+
+        // DB::table('contacts')->insert($contacts);
     }
 }

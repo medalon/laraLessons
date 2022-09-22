@@ -10,7 +10,7 @@ class Contact extends Model
 {
     use HasFactory, FilterSearchScope;
 
-    protected $fillable = ['first_name', 'last_name', 'email', 'phone', 'address', 'company_id'];
+    protected $fillable = ['first_name', 'last_name', 'email', 'phone', 'address', 'company_id', 'user_id'];
 
     public $searchColumns = ['first_name', 'last_name', 'email', 'company.name'];
 
@@ -20,6 +20,12 @@ class Contact extends Model
     {
         return $this->belongsTo(Company::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 
     public function scopeLatestFirst($query) 
     {
