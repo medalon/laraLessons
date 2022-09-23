@@ -33,6 +33,8 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    // protected $with = ['contacts', 'companies']; // this for eager loading
+
     /**
      * The attributes that should be cast.
      *
