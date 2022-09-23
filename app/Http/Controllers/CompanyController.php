@@ -47,7 +47,7 @@ class CompanyController extends Controller
     {
         $request->user()->companies()->create($request->all());
 
-        return redirect()->route('company.index')->with('message', "Company has been added successfully");
+        return redirect()->route('companies.index')->with('message', "Company has been added successfully");
     }
 
     /**
@@ -83,7 +83,7 @@ class CompanyController extends Controller
     {
         $company->update($request->all());
 
-        return redirect()->route('company.index')->with('message', "Company has been updates successfully");
+        return redirect()->route('companies.index')->with('message', "Company has been updates successfully");
     }
 
     /**
@@ -96,6 +96,6 @@ class CompanyController extends Controller
     {
         $company->delete();
 
-        return back()->with('message', "Company has been removed successfully");
+        return redirect()->route('companies.index')->with('message', "Company has been removed successfully");
     }
 }
