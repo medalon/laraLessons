@@ -32,9 +32,9 @@
                   </tr>
                 </thead>
                 <tbody>
-                    @if ($message = session('message'))
-                        <div class="alert alert-success">{{ $message }}</div>
-                    @endif
+                    
+                    @include('layouts._message')
+
                     @if ($contacts->count())
                         @foreach ($contacts as $index => $contact)
                             <tr>

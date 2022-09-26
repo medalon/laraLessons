@@ -28,6 +28,26 @@ class ProfileUpdateRequest extends FormRequest
             'last_name' => ['required', 'string', 'max:255'],
             'company' => ['nullable'],
             'bio' => ['nullable'],
+            'profile_picture' => ['nullable', 'mimes:jpeg,bmp,png'],
         ];
+    }
+
+    public function handleRequest()
+    {
+        // dump($request->file('profile_picture'));
+        $profileData = $this->validated();
+
+        $profile = $this->user();
+
+        if ($this->hasFile('profile_picture'))
+        {
+            $picture = $this->profile_picture;
+            $fileName = "profile-picture-{$profile->id}." . $picture->getClientOriginalExtension();
+            $picture->move(public_path('upload'), $fileName);
+    
+            $profileData['profile_picture'] = $fileName;
+        }
+
+        return $profileData;
     }
 }
