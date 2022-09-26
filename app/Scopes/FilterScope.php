@@ -17,7 +17,7 @@ class FilterScope implements Scope
         
         foreach ($columns as $column)
         {
-            if($value = request($column)) {
+            if($value = request()->query($column)) {
                 $builder->where($column, $value);
             }
         }
